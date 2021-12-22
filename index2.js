@@ -1,5 +1,5 @@
 const createElement = (type, props = {}, children= []) => {
-    const div = document.createElement(type)
+    const el = document.createElement(type)
     // if('text' in props){
     //     div.innerText = props.text
     // }
@@ -14,7 +14,7 @@ const createElement = (type, props = {}, children= []) => {
     // console.log(arr)
 
     Object.keys(props).map(key => {
-        div[key] = props[key]
+        el[key] = props[key]
         // console.log(key === 'style')
         // if(key === 'style'){
         //     Object.keys(props[key]).map(styleKey => {
@@ -26,10 +26,10 @@ const createElement = (type, props = {}, children= []) => {
 
 
     if(children.length > 0){
-        children.map(child => div.appendChild(child))
+        children.map(child => el.appendChild(child))
     }
     
-    return div
+    return el
 }
 
 const render = (node, target) => {
